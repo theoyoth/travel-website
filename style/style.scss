@@ -1,0 +1,1773 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+$main-color: #003f52;
+$snd-color: #06617d;
+$font-clr-snd: #d4d2d2;
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  // NAV
+  .header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transition: 0.2s ease;
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+
+      .nav-item {
+        position: relative;
+        transform: translateY(-20px);
+      }
+
+      .logo-link,
+      .nav-close {
+        text-decoration: none;
+        color: white;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .logo-link {
+        transform: translateY(-10px);
+      }
+    }
+  }
+  .scroll-header {
+    background: $main-color;
+  }
+  // HOME
+  .home {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url("../img/bg.jpg");
+    background-repeat: no-repeat;
+    z-index: 1;
+
+    .title {
+      transform: translateX(-100px);
+      opacity: 0;
+      z-index: 5;
+      p {
+        color: white;
+        margin-bottom: 20px;
+        font-weight: 500;
+      }
+      h1 {
+        color: white;
+        font-weight: 500;
+
+        span {
+          font-weight: 700;
+        }
+      }
+    }
+    .btn-explore {
+      position: relative;
+      background: $main-color;
+      padding: 13px 37px;
+      border: none;
+      overflow: hidden;
+      transition: 0.4s ease;
+      opacity: 0;
+      .link-explore {
+        color: white;
+        font-weight: 500;
+        text-decoration: none;
+      }
+      &:hover,
+      &:focus {
+        box-shadow: inset 0 4em 0 $snd-color;
+      }
+    }
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    .five-maldives-beaches {
+      transform: translateX(100px);
+      opacity: 0;
+    }
+    .social-media {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      opacity: 0;
+
+      .link-socmed {
+        text-decoration: none;
+        transition: 0.4s ease;
+
+        &:hover {
+          transform: translateY(-7px);
+        }
+        .socmed {
+          color: white;
+        }
+      }
+    }
+  }
+  // ABOUT
+  .about {
+    height: 100vh;
+    background: $main-color;
+    align-items: center;
+
+    .about-title {
+      color: white;
+      opacity: 0;
+      transform: translateY(-40px);
+
+      .btn-about {
+        position: relative;
+        background: $snd-color;
+        border: none;
+        .link-about {
+          color: white;
+          font-weight: 500;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .about-image {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .about-img {
+        transform: translateX(100px);
+        opacity: 0;
+      }
+    }
+  }
+  // DISCOVER
+  .discover {
+    background: $main-color;
+    color: white;
+    .container-image-discover {
+      opacity: 0;
+    }
+  }
+  // PLACES
+  .places {
+    background: $main-color;
+    display: grid;
+    place-items: center;
+
+    .places-title {
+      color: white;
+      text-align: center;
+      margin: 30px 0;
+    }
+    .container-image-places {
+      display: grid;
+      grid-template-columns: auto-fit(minmax(100px, 200px));
+      justify-content: center;
+
+      .beach-maldives {
+        position: relative;
+        width: 200px;
+        height: 280px;
+        color: white;
+        overflow: hidden;
+
+        &:hover img {
+          transform: scale(1.05);
+        }
+        img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          transition: 0.4s ease;
+        }
+        .places-explain {
+          position: relative;
+          width: 100%;
+          height: 100%;
+
+          .beach-place-explain {
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            h2 {
+              font-size: 16px;
+            }
+            p {
+              font-size: 12px;
+            }
+            .price {
+              margin-top: 20px;
+            }
+          }
+          .star {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            display: flex;
+            font-size: 12px;
+            p {
+              margin-left: 5px;
+            }
+          }
+          .next-link {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 60px;
+            height: 40px;
+            background: $snd-color;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            .arrow-link {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  .mail {
+    background: $main-color;
+    height: 80vh;
+    display: grid;
+    place-items: center;
+
+    .container-mail {
+      background: $snd-color;
+      color: white;
+      display: grid;
+      place-items: center;
+
+      .mail-title {
+        text-align: center;
+        h2 {
+          margin-bottom: 20px;
+        }
+      }
+      .input-mail {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 80%;
+        position: relative;
+        .type-email {
+          width: 100%;
+          background: $main-color;
+          color: white;
+          border: none;
+          outline: none;
+        }
+        .btn-subs {
+          width: 100px;
+          background: $main-color;
+          border: none;
+          .link-subs {
+            color: white;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+  .footer-details {
+    background: $main-color;
+    .social-media {
+      width: 200px;
+      display: flex;
+      justify-content: space-between;
+
+      a {
+        text-decoration: none;
+        transition: 0.4s ease;
+
+        &:hover {
+          transform: translateY(-10px);
+        }
+        .socmed {
+          cursor: pointer;
+          color: white;
+        }
+      }
+    }
+    .details {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      position: relative;
+
+      .details-detail {
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        transform: translateY(60px);
+
+        .about-details,
+        .company-details,
+        .support-details {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 10px;
+
+          a {
+            color: $font-clr-snd;
+            text-decoration: none;
+          }
+        }
+      }
+      .footer-copyright {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        p {
+          font-size: 9px;
+          color: $font-clr-snd;
+        }
+        .terms-privacy {
+          display: flex;
+          justify-content: space-between;
+          a {
+            text-decoration: none;
+            color: $font-clr-snd;
+          }
+        }
+      }
+    }
+  }
+}
+// MOBILE
+@media screen and (max-width: 500px) {
+  // HEADER for MOBILE
+  .nav-container {
+    padding: 20px 20px;
+    align-items: center;
+
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      padding: 3rem;
+      width: 200px;
+      height: 100%;
+      background: $main-color;
+      transform: translateX(100%);
+      transition: 0.5s ease;
+
+      .nav-list {
+        height: 200px;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .item {
+          text-decoration: none;
+          color: white;
+          font-size: 12px;
+        }
+      }
+      .nav-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 20px;
+      }
+    }
+    .toggle-menu {
+      color: white;
+      font-size: 20px;
+    }
+    .active {
+      transform: translateX(0);
+    }
+  }
+  // HOME for MOBILE
+  .home {
+    background-size: cover;
+    background-position: -200px 0;
+    padding: 0 20px;
+    .home-title {
+      transform: translateY(120px);
+
+      .title {
+        position: relative;
+        h1 {
+          font-size: 2.2rem;
+        }
+        p {
+          font-size: 18px;
+        }
+      }
+      .btn-explore {
+        font-size: 20px;
+        margin-top: 60px;
+      }
+    }
+    .five-maldives-beaches {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 70px;
+      .beach-in-maldives {
+        width: 250px;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        background-color: $main-color;
+        transform: translateY(100px);
+        z-index: 2;
+
+        .visit-beaches {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          p {
+            color: white;
+            font-size: 10px;
+          }
+          .more {
+            display: flex;
+            align-items: center;
+
+            a {
+              text-decoration: none;
+              color: white;
+              font-size: 10px;
+            }
+            .arrow-right {
+              color: white;
+              transform: translateX(10px);
+              font-size: 10px;
+            }
+          }
+        }
+        .img-more-beaches {
+          height: 120px;
+          overflow: hidden;
+          .img-visit-beaches {
+            cursor: pointer;
+            transition: all 0.6s;
+
+            &:hover {
+              transform: scale(1.1, 1.1);
+            }
+          }
+        }
+      }
+    }
+    .social-media {
+      width: 150px;
+      transform: translateY(180px);
+
+      .link-socmed {
+        .socmed {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+  // ABOUT for MOBILE
+  .about {
+    padding: 2rem 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    align-content: center;
+    align-items: center;
+
+    .about-title {
+      text-align: center;
+      h2 {
+        margin-bottom: 20px;
+      }
+      p {
+        color: $font-clr-snd;
+        font-size: 10px;
+      }
+
+      .btn-about {
+        position: relative;
+        background: $snd-color;
+        padding: 13px 37px;
+        border: none;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        .link-about {
+          color: white;
+          font-weight: 500;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .about-image {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .about-img1 {
+        width: 140px;
+      }
+      .about-img2 {
+        width: 160px;
+      }
+    }
+  }
+  // DISCOVER MOBILE
+  // most discover places
+  .discover {
+    background: $main-color;
+    color: white;
+    padding: 2rem 20px;
+    overflow: hidden;
+    .discover-page-one {
+      height: 80vh;
+
+      .discover-title {
+        text-align: center;
+        p {
+          font-size: 12px;
+          color: $font-clr-snd;
+          margin-top: 20px;
+        }
+      }
+      .discover-image {
+        .container-image-discover {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 70px;
+
+          .dhigurah-beach {
+            height: 240px;
+            width: 40px;
+            position: relative;
+            overflow: hidden;
+
+            img {
+              height: 100%;
+            }
+            .dhigurah-beach-explain {
+              display: none;
+              position: absolute;
+              bottom: 0;
+              h2 {
+                font-size: 14px;
+              }
+              p {
+                font-size: 10px;
+              }
+            }
+          }
+          .Bikini-beach {
+            width: 200px;
+            position: relative;
+
+            img {
+              width: 100%;
+            }
+            .Bikini-beach-explain {
+              position: absolute;
+              bottom: 20px;
+              left: 20px;
+              h2 {
+                font-size: 12px;
+                margin-bottom: 10px;
+              }
+              p {
+                font-size: 7px;
+              }
+            }
+          }
+          .Milaidhoo-beach {
+            height: 240px;
+            width: 40px;
+            position: relative;
+            overflow: hidden;
+
+            img {
+              height: 100%;
+            }
+            .Milaidhoo-beach-explain {
+              display: none;
+              position: absolute;
+              bottom: 0;
+              h2 {
+                font-size: 14px;
+              }
+              p {
+                font-size: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .discover-page-two {
+      height: 70vh;
+      .serve-title {
+        text-align: center;
+        .serving {
+          display: flex;
+          color: $font-clr-snd;
+          margin-top: 40px;
+          width: 90%;
+          display: flex;
+          justify-content: space-between;
+
+          .year-experience,
+          .complete-tours,
+          .tourist-destination {
+            text-align: start;
+
+            p {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+      .serve-image {
+        margin-top: 70px;
+        position: relative;
+        .serve1 {
+          width: 280px;
+        }
+        .serve2 {
+          width: 100px;
+          position: absolute;
+          right: 0;
+          bottom: -30px;
+        }
+      }
+    }
+    .discover-page-three {
+      .video-discover-title {
+        text-align: center;
+
+        p {
+          font-size: 12px;
+          margin-top: 20px;
+          color: $font-clr-snd;
+        }
+      }
+      .discover-video {
+        margin-top: 70px;
+        text-align: center;
+        .video {
+          video {
+            width: 280px;
+          }
+        }
+      }
+    }
+  }
+  // PLACES MOBILE
+  .places {
+    .container-image-places {
+      gap: 20px 0;
+      margin-bottom: 50px;
+    }
+  }
+  .mail {
+    .container-mail {
+      padding: 40px 0;
+      width: 100%;
+      .mail-title {
+        margin-bottom: 20px;
+        p {
+          font-size: 12px;
+        }
+      }
+      .input-mail {
+        .type-email {
+          padding: 10px;
+        }
+        .btn-subs {
+          margin-top: 20px;
+          padding: 10px;
+        }
+      }
+    }
+  }
+  .footer-details {
+    height: 70vh;
+    background: $main-color;
+    padding: 0 20px;
+    .social-media {
+      width: 170px;
+      display: flex;
+      justify-content: space-between;
+
+      a {
+        text-decoration: none;
+        transition: 0.4s ease;
+
+        &:hover {
+          transform: translateY(-10px);
+        }
+        .socmed {
+          font-size: 1.5rem;
+          cursor: pointer;
+          color: white;
+        }
+      }
+    }
+    .details {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      height: 90%;
+      position: relative;
+
+      .details-detail {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        color: white;
+
+        .about-details,
+        .company-details,
+        .support-details {
+          display: flex;
+          flex-direction: column;
+
+          h4 {
+            margin-bottom: 10px;
+          }
+
+          a {
+            color: $font-clr-snd;
+            text-decoration: none;
+            font-size: 12px;
+            line-height: 18px;
+          }
+        }
+      }
+      .footer-copyright {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        p {
+          font-size: 9px;
+          color: $font-clr-snd;
+          margin-bottom: 20px;
+        }
+        .terms-privacy {
+          display: flex;
+          justify-content: space-between;
+
+          a {
+            text-decoration: none;
+            color: $font-clr-snd;
+            font-size: 9px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// LAPTOP
+@media screen and (min-width: 1025px) {
+  .header {
+    background: transparent;
+
+    .nav-container {
+      padding: 20px 7rem;
+      align-items: center;
+
+      .nav-list {
+        width: 320px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .nav-item {
+          list-style: none;
+
+          &::after {
+            content: "";
+            width: 20%;
+            height: 1.6px;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            z-index: -1;
+            background: white;
+            transition: 0.4s ease;
+          }
+          &:hover::after {
+            width: 100%;
+          }
+          .item {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+          }
+        }
+      }
+
+      .nav-close,
+      .toggle {
+        display: none;
+      }
+      .logo-link {
+        font-size: 1.6rem;
+      }
+    }
+  }
+  // HOME LAPTOP
+  .home {
+    background-size: cover;
+    padding: 0 7rem;
+    .home-title {
+      transform: translateY(120px);
+
+      h1 {
+        font-size: 3rem;
+      }
+      .btn-explore {
+        margin-top: 20px;
+      }
+      .btn-explore {
+        position: relative;
+        background: $main-color;
+        padding: 13px 37px;
+        border: none;
+        overflow: hidden;
+        transition: 0.4s ease;
+        opacity: 0;
+        .link-explore {
+          color: white;
+          font-weight: 500;
+          text-decoration: none;
+        }
+        &:hover,
+        &:focus {
+          box-shadow: inset 0 4em 0 $snd-color;
+        }
+      }
+    }
+    .five-maldives-beaches {
+      display: flex;
+      justify-content: flex-end;
+      .beach-in-maldives {
+        width: 350px;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        background-color: $main-color;
+        transform: translateY(100px);
+        z-index: 2;
+
+        .visit-beaches {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          p {
+            color: white;
+            font-size: 14px;
+          }
+          .more {
+            display: flex;
+            align-items: center;
+
+            a {
+              text-decoration: none;
+              color: white;
+            }
+            .arrow-right {
+              color: white;
+              transform: translateX(10px);
+            }
+          }
+        }
+        .img-more-beaches {
+          height: 160px;
+          overflow: hidden;
+          .img-visit-beaches {
+            cursor: pointer;
+            transition: all 0.6s;
+
+            &:hover {
+              transform: scale(1.1, 1.1);
+            }
+          }
+        }
+      }
+    }
+    .social-media {
+      width: 170px;
+      transform: translateY(100px);
+      opacity: 0;
+
+      .link-socmed {
+        text-decoration: none;
+        transition: 0.4s ease;
+
+        &:hover {
+          transform: translateY(-7px);
+        }
+        .socmed {
+          color: white;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+  // ABOUT LAPTOP
+  .about {
+    padding: 2rem 7rem;
+    height: 100vh;
+    background: $main-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .about-title {
+      width: 40%;
+      h2 {
+        margin-bottom: 30px;
+      }
+      p {
+        color: $font-clr-snd;
+        font-size: 15px;
+      }
+
+      .btn-about {
+        position: relative;
+        background: $snd-color;
+        padding: 13px 37px;
+        border: none;
+        margin-top: 30px;
+        transition: 0.2s ease;
+
+        .link-about {
+          color: white;
+          font-weight: 500;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .about-image {
+      width: 500px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .about-img1 {
+        width: 220px;
+        transition: 0.2s ease;
+
+        &:hover {
+          transform: scale(1.07);
+        }
+      }
+      .about-img2 {
+        width: 240px;
+        transition: 0.2s ease;
+
+        &:hover {
+          transform: scale(1.07);
+        }
+      }
+    }
+  }
+  // DISCOVER LAPTOP
+  .discover {
+    width: 100%;
+    background: $main-color;
+    padding: 2rem 7rem;
+    color: white;
+
+    .discover-page-one {
+      height: 100vh;
+      .discover-title {
+        text-align: center;
+        h2 {
+          margin-bottom: 30px;
+        }
+        p {
+          margin-bottom: 30px;
+          color: $font-clr-snd;
+        }
+      }
+      .discover-image {
+        display: flex;
+        justify-content: space-between;
+        .container-image-discover {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          .dhigurah-beach {
+            position: relative;
+            overflow: hidden;
+            height: 280px;
+            img {
+              width: 200px;
+            }
+            .dhigurah-beach-explain {
+              position: absolute;
+              bottom: 20px;
+              left: 20px;
+
+              h2 {
+                margin-bottom: 10px;
+              }
+            }
+          }
+          .Bikini-beach {
+            position: relative;
+            overflow: hidden;
+            height: 350px;
+            img {
+              width: 250px;
+            }
+            .Bikini-beach-explain {
+              position: absolute;
+              bottom: 20px;
+              left: 20px;
+
+              h2 {
+                margin-bottom: 10px;
+              }
+            }
+          }
+          .Milaidhoo-beach {
+            position: relative;
+            overflow: hidden;
+            height: 280px;
+            img {
+              width: 200px;
+            }
+            .Milaidhoo-beach-explain {
+              position: absolute;
+              bottom: 20px;
+              left: 20px;
+
+              h2 {
+                margin-bottom: 10px;
+              }
+            }
+          }
+          h2 {
+            font-size: 14px;
+          }
+          p {
+            font-size: 10px;
+            color: $font-clr-snd;
+          }
+          img {
+            transition: 0.3s ease;
+            &:hover {
+              transform: scale(1.05);
+            }
+          }
+        }
+      }
+    }
+    .discover-page-two {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .serve-title {
+        text-align: center;
+
+        .serving {
+          width: 400px;
+          display: flex;
+          justify-content: space-between;
+          margin-top: 50px;
+
+          .year-experience,
+          .complete-tours,
+          .tourist-destination {
+            text-align: left;
+            color: $font-clr-snd;
+            p {
+              margin-top: 10px;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+      .serve-image {
+        position: relative;
+        margin-top: 100px;
+        .serve1 {
+          width: 400px;
+        }
+        .serve2 {
+          width: 180px;
+          transform: translate(-50px, 70px);
+        }
+      }
+    }
+    .discover-page-three {
+      height: 100vh;
+
+      .video-discover-title {
+        text-align: center;
+        h2 {
+          margin-bottom: 30px;
+        }
+        p {
+          color: $font-clr-snd;
+        }
+      }
+      .discover-video {
+        margin-top: 80px;
+        text-align: center;
+        .video {
+        }
+      }
+    }
+  }
+  // PLACES LAPTOP
+  .places {
+    height: 100vh;
+    background: $main-color;
+    padding: 2rem 7rem;
+    display: grid;
+    place-items: center;
+
+    .places-title {
+      color: white;
+      text-align: center;
+      transform: translateY(-50px);
+    }
+    .container-image-places {
+      display: grid;
+      width: 60%;
+      grid-template-columns: 200px 200px 200px;
+      gap: 20px;
+      justify-content: center;
+
+      .beach-maldives {
+        position: relative;
+        width: 200px;
+        height: 280px;
+        color: white;
+        overflow: hidden;
+
+        &:hover img {
+          transform: scale(1.05);
+        }
+        img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          transition: 0.4s ease;
+        }
+        .places-explain {
+          position: relative;
+          width: 100%;
+          height: 100%;
+
+          .beach-place-explain {
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            h2 {
+              font-size: 16px;
+            }
+            p {
+              font-size: 12px;
+            }
+            .price {
+              margin-top: 20px;
+            }
+          }
+          .star {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            display: flex;
+            font-size: 12px;
+            p {
+              margin-left: 5px;
+            }
+          }
+          .next-link {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 60px;
+            height: 40px;
+            background: $snd-color;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            .arrow-link {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  // MAIL LAPTOP
+  .mail {
+    background: $main-color;
+    height: 80vh;
+    display: grid;
+    place-items: center;
+
+    .container-mail {
+      background: $snd-color;
+      width: 800px;
+      height: 400px;
+      color: white;
+      padding: 2rem;
+      display: grid;
+      place-items: center;
+      margin-top: 80px;
+      .mail-title {
+        text-align: center;
+        h2 {
+          margin-bottom: 20px;
+        }
+      }
+      .input-mail {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 80%;
+        position: relative;
+        .type-email {
+          width: 100%;
+          padding: 1rem 2rem;
+          background: $main-color;
+          color: white;
+          border: none;
+          outline: none;
+        }
+        .btn-subs {
+          width: 100px;
+          padding: 12px 10px;
+          background: $main-color;
+          border: none;
+          margin-top: 30px;
+          .link-subs {
+            color: white;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+  // FOOTER LAPTOP
+  .footer-details {
+    height: 70vh;
+    background: $main-color;
+    padding: 2rem 7rem;
+    .social-media {
+      width: 170px;
+      display: flex;
+      justify-content: space-between;
+
+      a {
+        text-decoration: none;
+        transition: 0.4s ease;
+
+        &:hover {
+          transform: translateY(-10px);
+        }
+        .socmed {
+          font-size: 1.5rem;
+          cursor: pointer;
+          color: white;
+        }
+      }
+    }
+    .details {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      height: 350px;
+      transform: translateY(40px);
+      position: relative;
+
+      .details-detail {
+        display: flex;
+        justify-content: space-between;
+        width: 400px;
+        color: white;
+
+        .about-details,
+        .company-details,
+        .support-details {
+          display: flex;
+          flex-direction: column;
+
+          h4 {
+            margin-bottom: 20px;
+          }
+
+          a {
+            color: $font-clr-snd;
+            text-decoration: none;
+            font-size: 12px;
+            line-height: 18px;
+          }
+        }
+      }
+      .footer-copyright {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        p {
+          font-size: 9px;
+          color: $font-clr-snd;
+        }
+        .terms-privacy {
+          width: 200px;
+          display: flex;
+          justify-content: space-between;
+          a {
+            text-decoration: none;
+            color: $font-clr-snd;
+            font-size: 9px;
+          }
+        }
+      }
+    }
+  }
+}
+// TABLET and small LAPTOP
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  // header TABLET
+  .header {
+    background: transparent;
+
+    .nav-container {
+      padding: 2rem 2rem;
+      align-items: center;
+
+      .nav-list {
+        width: 370px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .nav-item {
+          list-style: none;
+
+          &::after {
+            content: "";
+            width: 20%;
+            height: 1.6px;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            z-index: -1;
+            background: white;
+            transition: 0.4s ease;
+          }
+          &:hover::after {
+            width: 100%;
+          }
+          .item {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            font-size: 1.1rem;
+          }
+        }
+      }
+
+      .nav-close,
+      .toggle {
+        display: none;
+      }
+      .logo-link {
+        font-size: 2rem;
+      }
+    }
+  }
+  // home TABLET
+  .home {
+    background-size: cover;
+    padding: 0 2rem;
+    .home-title {
+      transform: translateY(200px);
+
+      h1 {
+        font-size: 4rem;
+      }
+      .btn-explore {
+        padding: 1.7rem 4rem;
+        margin-top: 50px;
+        a {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .five-maldives-beaches {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 100px;
+      .beach-in-maldives {
+        width: 400px;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        background-color: $main-color;
+        transform: translateY(100px);
+        z-index: 2;
+
+        .visit-beaches {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          p {
+            color: white;
+            font-size: 1.2rem;
+          }
+          .more {
+            display: flex;
+            align-items: center;
+
+            a {
+              text-decoration: none;
+              color: white;
+              font-size: 1.2rem;
+            }
+            .arrow-right {
+              color: white;
+              transform: translateX(10px);
+              font-size: 1.2rem;
+            }
+          }
+        }
+        .img-more-beaches {
+          height: 200px;
+          overflow: hidden;
+          .img-visit-beaches {
+            cursor: pointer;
+            transition: all 0.6s;
+            height: 100%;
+
+            &:hover {
+              transform: scale(1.1, 1.1);
+            }
+          }
+        }
+      }
+    }
+    .social-media {
+      width: 240px;
+      transform: translateY(200px);
+      .socmed {
+        font-size: 2.4rem;
+      }
+    }
+  }
+  // about TABLET
+  .about {
+    padding: 2rem 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .about-title {
+      text-align: center;
+      width: 500px;
+      margin-top: 30px;
+      h2 {
+        margin-bottom: 30px;
+        font-size: 2rem;
+      }
+      p {
+        color: $font-clr-snd;
+        font-size: 1rem;
+      }
+
+      .btn-about {
+        position: relative;
+        background: $snd-color;
+        padding: 1.4rem 3rem;
+        border: none;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        .link-about {
+          color: white;
+          font-weight: 500;
+          text-decoration: none;
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .about-image {
+      width: 70%;
+      height: 50%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .about-img1 {
+        width: 230px;
+      }
+      .about-img2 {
+        width: 270px;
+      }
+    }
+  }
+  // discover TABLET
+  .discover {
+    padding: 0 2rem;
+    .discover-page-one {
+      height: 70vh;
+      .discover-title {
+        text-align: center;
+        h2 {
+          margin-bottom: 30px;
+          font-size: 2rem;
+        }
+        p {
+          font-size: 1rem;
+        }
+      }
+      .discover-image {
+        margin-top: 60px;
+        .container-image-discover {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .dhigurah-beach {
+            position: relative;
+            img {
+              width: 190px;
+            }
+            .dhigurah-beach-explain {
+              position: absolute;
+              bottom: 10px;
+              left: 10px;
+              h2 {
+                font-size: 1rem;
+              }
+              p {
+                font-size: 14px;
+              }
+            }
+          }
+          .Bikini-beach {
+            position: relative;
+            img {
+              width: 210px;
+            }
+            .Bikini-beach-explain {
+              position: absolute;
+              bottom: 10px;
+              left: 10px;
+              h2 {
+                font-size: 1.1rem;
+              }
+              p {
+                font-size: 0.9rem;
+              }
+            }
+          }
+          .Milaidhoo-beach {
+            position: relative;
+            img {
+              width: 190px;
+            }
+            .Milaidhoo-beach-explain {
+              position: absolute;
+              bottom: 10px;
+              left: 10px;
+              h2 {
+                font-size: 1rem;
+              }
+              p {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .discover-page-two {
+      height: 70vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .serve-title {
+        text-align: center;
+        h2 {
+          font-size: 2rem;
+        }
+        .serving {
+          margin-top: 30px;
+          width: 380px;
+          text-align: left;
+          display: flex;
+          justify-content: space-between;
+
+          h4 {
+            margin-bottom: 10px;
+          }
+        }
+      }
+      .serve-image {
+        display: flex;
+        position: relative;
+        left: -20px;
+        margin-top: 100px;
+        .serve1 {
+          width: 400px;
+        }
+
+        .serve2 {
+          width: 150px;
+          position: absolute;
+          bottom: -40px;
+          right: -50px;
+        }
+      }
+    }
+    .discover-page-three {
+      height: 70vh;
+      text-align: center;
+
+      .video-discover-title {
+        h2 {
+          font-size: 2rem;
+          margin-bottom: 30px;
+        }
+        p {
+          font-size: 1rem;
+        }
+      }
+      .discover-video {
+        margin-top: 100px;
+      }
+    }
+  }
+  // places TABLET
+  .places {
+    .places-title {
+      h2 {
+        font-size: 2rem;
+      }
+    }
+    .container-image-places {
+      gap: 20px 0;
+    }
+  }
+  // mail TABLET
+  .mail {
+    .container-mail {
+      width: 100%;
+      padding: 2rem;
+      .mail-title {
+        h2 {
+          font-size: 2rem;
+        }
+      }
+      .input-mail {
+        margin-top: 50px;
+        .type-email {
+          width: 100%;
+          padding: 1rem 2rem;
+          background: $main-color;
+          color: white;
+          border: none;
+          outline: none;
+        }
+        .btn-subs {
+          width: 100px;
+          padding: 12px 10px;
+          background: $main-color;
+          border: none;
+          margin-top: 30px;
+          .link-subs {
+            color: white;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+  // footer TABLET
+  .footer-details {
+    height: 40vh;
+    padding: 0 2rem;
+    position: relative;
+    .social-media {
+      .socmed {
+        font-size: 1.7rem;
+      }
+    }
+    .details {
+      height: 90%;
+      display: flex;
+      justify-content: space-between;
+      .details-detail {
+        .about-details,
+        .company-details,
+        .support-details {
+          h4 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+          }
+          a {
+            font-size: 0.9rem;
+          }
+        }
+      }
+      .footer-copyright {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        p {
+          font-size: 12px;
+          color: $font-clr-snd;
+        }
+        .terms-privacy {
+          width: 200px;
+          display: flex;
+          justify-content: space-between;
+          a {
+            text-decoration: none;
+            color: $font-clr-snd;
+            font-size: 9px;
+          }
+        }
+      }
+    }
+  }
+}
+// PHABLET
+@media (min-width: 501px) and (max-width: 767px) {
+}
