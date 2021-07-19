@@ -200,7 +200,9 @@ body .discover {
   color: white;
 }
 
-body .discover .container-image-discover {
+body .discover .discover-title {
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
   opacity: 0;
 }
 
@@ -695,76 +697,33 @@ body .footer-details .details .footer-copyright .terms-privacy a {
     color: #d4d2d2;
     margin-top: 20px;
   }
-  .discover .discover-page-one .discover-image .container-image-discover {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin-top: 70px;
+  .discover .discover-page-one .swiper-container {
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
   }
-  .discover .discover-page-one .discover-image .container-image-discover .dhigurah-beach {
-    height: 240px;
-    width: 40px;
-    position: relative;
-    overflow: hidden;
-  }
-  .discover .discover-page-one .discover-image .container-image-discover .dhigurah-beach img {
+  .discover .discover-page-one .swiper-container .swiper-wrapper {
+    margin-top: 100px;
     height: 100%;
   }
-  .discover .discover-page-one .discover-image .container-image-discover .dhigurah-beach .dhigurah-beach-explain {
-    display: none;
-    position: absolute;
-    bottom: 0;
-  }
-  .discover .discover-page-one .discover-image .container-image-discover .dhigurah-beach .dhigurah-beach-explain h2 {
-    font-size: 14px;
-  }
-  .discover .discover-page-one .discover-image .container-image-discover .dhigurah-beach .dhigurah-beach-explain p {
-    font-size: 10px;
-  }
-  .discover .discover-page-one .discover-image .container-image-discover .Bikini-beach {
+  .discover .discover-page-one .swiper-container .swiper-wrapper .swiper-slide {
     width: 200px;
-    position: relative;
-  }
-  .discover .discover-page-one .discover-image .container-image-discover .Bikini-beach img {
-    width: 100%;
-  }
-  .discover .discover-page-one .discover-image .container-image-discover .Bikini-beach .Bikini-beach-explain {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-  }
-  .discover .discover-page-one .discover-image .container-image-discover .Bikini-beach .Bikini-beach-explain h2 {
-    font-size: 12px;
-    margin-bottom: 10px;
-  }
-  .discover .discover-page-one .discover-image .container-image-discover .Bikini-beach .Bikini-beach-explain p {
-    font-size: 7px;
-  }
-  .discover .discover-page-one .discover-image .container-image-discover .Milaidhoo-beach {
-    height: 240px;
-    width: 40px;
+    height: 280px;
     position: relative;
     overflow: hidden;
   }
-  .discover .discover-page-one .discover-image .container-image-discover .Milaidhoo-beach img {
+  .discover .discover-page-one .swiper-container .swiper-wrapper .swiper-slide img {
     height: 100%;
   }
-  .discover .discover-page-one .discover-image .container-image-discover .Milaidhoo-beach .Milaidhoo-beach-explain {
-    display: none;
+  .discover .discover-page-one .swiper-container .swiper-wrapper .swiper-slide .swiper-explain {
     position: absolute;
-    bottom: 0;
+    left: 20px;
+    bottom: 20px;
   }
-  .discover .discover-page-one .discover-image .container-image-discover .Milaidhoo-beach .Milaidhoo-beach-explain h2 {
-    font-size: 14px;
+  .discover .discover-page-one .swiper-container .swiper-wrapper .swiper-slide .swiper-explain h2 {
+    font-size: 1rem;
   }
-  .discover .discover-page-one .discover-image .container-image-discover .Milaidhoo-beach .Milaidhoo-beach-explain p {
+  .discover .discover-page-one .swiper-container .swiper-wrapper .swiper-slide .swiper-explain p {
     font-size: 10px;
   }
   .discover .discover-page-two {
@@ -1204,6 +1163,7 @@ body .footer-details .details .footer-copyright .terms-privacy a {
     color: white;
   }
   .discover .discover-page-one {
+    margin-top: 50px;
     height: 100vh;
   }
   .discover .discover-page-one .discover-title {
@@ -1223,25 +1183,15 @@ body .footer-details .details .footer-copyright .terms-privacy a {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-  }
-  .discover .discover-page-one .discover-image .container-image-discover {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    border: 1px solid white;
   }
   .discover .discover-page-one .discover-image .container-image-discover .dhigurah-beach {
     position: relative;
-    overflow: hidden;
-    height: 280px;
+    width: 300px;
+    height: 300px;
   }
   .discover .discover-page-one .discover-image .container-image-discover .dhigurah-beach img {
-    width: 200px;
+    height: 100%;
   }
   .discover .discover-page-one .discover-image .container-image-discover .dhigurah-beach .dhigurah-beach-explain {
     position: absolute;
@@ -1253,11 +1203,11 @@ body .footer-details .details .footer-copyright .terms-privacy a {
   }
   .discover .discover-page-one .discover-image .container-image-discover .Bikini-beach {
     position: relative;
-    overflow: hidden;
-    height: 350px;
+    width: 300px;
+    height: 300px;
   }
   .discover .discover-page-one .discover-image .container-image-discover .Bikini-beach img {
-    width: 250px;
+    height: 100%;
   }
   .discover .discover-page-one .discover-image .container-image-discover .Bikini-beach .Bikini-beach-explain {
     position: absolute;
@@ -1269,11 +1219,11 @@ body .footer-details .details .footer-copyright .terms-privacy a {
   }
   .discover .discover-page-one .discover-image .container-image-discover .Milaidhoo-beach {
     position: relative;
-    overflow: hidden;
-    height: 280px;
+    width: 300px;
+    height: 300px;
   }
   .discover .discover-page-one .discover-image .container-image-discover .Milaidhoo-beach img {
-    width: 200px;
+    height: 100%;
   }
   .discover .discover-page-one .discover-image .container-image-discover .Milaidhoo-beach .Milaidhoo-beach-explain {
     position: absolute;

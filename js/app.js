@@ -89,12 +89,59 @@ gsap.to(".about-img", {
 
 // ================ discover page ================ //
 
-gsap.to(".container-image-discover", {
+// gsap.to(".container-image-discover", {
+//   y: 0,
+//   opacity: 1,
+//   scrollTrigger: {
+//     trigger: ".discover",
+//     start: "top 40%",
+//     end: "top 2 0%",
+//     toggleActions: "play resume resume reset",
+//   },
+// });
+gsap.to(" .discover-title", {
+  y: 0,
   opacity: 1,
   scrollTrigger: {
     trigger: ".discover",
-    start: "top 40%",
-    end: "top 2 0%",
+    start: "top 50%",
+    end: "top 10%",
     toggleActions: "play resume resume reset",
   },
 });
+
+// ================ Discover swiper =============== //
+if (window.innerWidth >= 1025) {
+  var swiper = new Swiper(".discover-image", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    spaceBetween: 40,
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: false,
+    },
+  });
+  // console.log("1025 px");
+}
+if (window.innerWidth <= 500) {
+  var swiper = new Swiper(".discover-image", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    spaceBetween: 40,
+    loop: true,
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: false,
+    },
+  });
+}

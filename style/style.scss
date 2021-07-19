@@ -162,8 +162,13 @@ body {
   .discover {
     background: $main-color;
     color: white;
-    .container-image-discover {
+    .discover-title {
+      transform: translateY(-40px);
       opacity: 0;
+    }
+    .container-image-discover {
+      // transform: translateY(-50px);
+      // opacity: 0;
     }
   }
   // PLACES
@@ -549,70 +554,29 @@ body {
           margin-top: 20px;
         }
       }
-      .discover-image {
-        .container-image-discover {
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-top: 70px;
 
-          .dhigurah-beach {
-            height: 240px;
-            width: 40px;
-            position: relative;
-            overflow: hidden;
+      .swiper-container {
+        display: grid;
+        place-items: center;
+        .swiper-wrapper {
+          margin-top: 100px;
+          height: 100%;
 
-            img {
-              height: 100%;
-            }
-            .dhigurah-beach-explain {
-              display: none;
-              position: absolute;
-              bottom: 0;
-              h2 {
-                font-size: 14px;
-              }
-              p {
-                font-size: 10px;
-              }
-            }
-          }
-          .Bikini-beach {
+          .swiper-slide {
             width: 200px;
-            position: relative;
-
-            img {
-              width: 100%;
-            }
-            .Bikini-beach-explain {
-              position: absolute;
-              bottom: 20px;
-              left: 20px;
-              h2 {
-                font-size: 12px;
-                margin-bottom: 10px;
-              }
-              p {
-                font-size: 7px;
-              }
-            }
-          }
-          .Milaidhoo-beach {
-            height: 240px;
-            width: 40px;
+            height: 280px;
             position: relative;
             overflow: hidden;
 
             img {
               height: 100%;
             }
-            .Milaidhoo-beach-explain {
-              display: none;
+            .swiper-explain {
               position: absolute;
-              bottom: 0;
+              left: 20px;
+              bottom: 20px;
               h2 {
-                font-size: 14px;
+                font-size: 1rem;
               }
               p {
                 font-size: 10px;
@@ -1003,6 +967,7 @@ body {
     color: white;
 
     .discover-page-one {
+      margin-top: 50px;
       height: 100vh;
       .discover-title {
         text-align: center;
@@ -1017,17 +982,16 @@ body {
       .discover-image {
         display: flex;
         justify-content: space-between;
+        border: 1px solid white;
+        // width: 800px;
         .container-image-discover {
-          width: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: space-around;
           .dhigurah-beach {
             position: relative;
-            overflow: hidden;
-            height: 280px;
+            // overflow: hidden;
+            width: 300px;
+            height: 300px;
             img {
-              width: 200px;
+              height: 100%;
             }
             .dhigurah-beach-explain {
               position: absolute;
@@ -1041,10 +1005,11 @@ body {
           }
           .Bikini-beach {
             position: relative;
-            overflow: hidden;
-            height: 350px;
+            // overflow: hidden;
+            width: 300px;
+            height: 300px;
             img {
-              width: 250px;
+              height: 100%;
             }
             .Bikini-beach-explain {
               position: absolute;
@@ -1058,10 +1023,11 @@ body {
           }
           .Milaidhoo-beach {
             position: relative;
-            overflow: hidden;
-            height: 280px;
+            // overflow: hidden;
+            width: 300px;
+            height: 300px;
             img {
-              width: 200px;
+              height: 100%;
             }
             .Milaidhoo-beach-explain {
               position: absolute;
