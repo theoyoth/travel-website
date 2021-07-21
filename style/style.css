@@ -33,6 +33,7 @@ body .header .nav-container .nav-item {
   position: relative;
   -webkit-transform: translateY(-20px);
           transform: translateY(-20px);
+  opacity: 0;
 }
 
 body .header .nav-container .logo-link,
@@ -46,6 +47,7 @@ body .header .nav-container .nav-close {
 body .header .nav-container .logo-link {
   -webkit-transform: translateY(-10px);
           transform: translateY(-10px);
+  opacity: 0;
 }
 
 body .scroll-header {
@@ -61,32 +63,31 @@ body .home {
   z-index: 1;
 }
 
-body .home .title {
+body .home .home-title .title {
   -webkit-transform: translateX(-100px);
           transform: translateX(-100px);
   opacity: 0;
   z-index: 5;
 }
 
-body .home .title p {
+body .home .home-title .title p {
   color: white;
   margin-bottom: 20px;
   font-weight: 500;
 }
 
-body .home .title h1 {
+body .home .home-title .title h1 {
   color: white;
   font-weight: 500;
 }
 
-body .home .title h1 span {
+body .home .home-title .title h1 span {
   font-weight: 700;
 }
 
-body .home .btn-explore {
+body .home .home-title .btn-explore {
   position: relative;
   background: #003f52;
-  padding: 13px 37px;
   border: none;
   overflow: hidden;
   -webkit-transition: 0.4s ease;
@@ -94,13 +95,13 @@ body .home .btn-explore {
   opacity: 0;
 }
 
-body .home .btn-explore .link-explore {
+body .home .home-title .btn-explore .link-explore {
   color: white;
   font-weight: 500;
   text-decoration: none;
 }
 
-body .home .btn-explore:hover, body .home .btn-explore:focus {
+body .home .home-title .btn-explore:hover {
   -webkit-box-shadow: inset 0 4em 0 #06617d;
           box-shadow: inset 0 4em 0 #06617d;
 }
@@ -206,6 +207,24 @@ body .discover .discover-title {
   opacity: 0;
 }
 
+body .discover .discover-page-two .serve-title h2 {
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
+  opacity: 0;
+}
+
+body .discover .discover-page-two .serve-title .serving .experience-company {
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
+  opacity: 0;
+}
+
+body .discover .discover-page-three .video-discover-title {
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
+  opacity: 0;
+}
+
 body .places {
   background: #003f52;
   display: -ms-grid;
@@ -222,8 +241,6 @@ body .places .places-title {
 body .places .container-image-places {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto-fit(minmax(100px, 200px));
-      grid-template-columns: auto-fit(minmax(100px, 200px));
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -309,6 +326,12 @@ body .places .container-image-places .beach-maldives .places-explain .next-link 
 
 body .places .container-image-places .beach-maldives .places-explain .next-link .arrow-link {
   font-size: 2rem;
+}
+
+body .places .container-image-places .beach-maldives {
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
+  opacity: 0;
 }
 
 body .mail {
@@ -547,8 +570,11 @@ body .footer-details .details .footer-copyright .terms-privacy a {
     font-size: 18px;
   }
   .home .home-title .btn-explore {
-    font-size: 20px;
     margin-top: 60px;
+    padding: 13px 37px;
+  }
+  .home .home-title .btn-explore .link-explore {
+    font-size: 20px;
   }
   .home .five-maldives-beaches {
     display: -webkit-box;
@@ -726,6 +752,10 @@ body .footer-details .details .footer-copyright .terms-privacy a {
   .discover .discover-page-one .swiper-container .swiper-wrapper .swiper-slide .swiper-explain p {
     font-size: 10px;
   }
+  .discover .discover-page-one .swiper-slide-shadow-left,
+  .discover .discover-page-one .swiper-slide-shadow-right {
+    background: none;
+  }
   .discover .discover-page-two {
     height: 70vh;
   }
@@ -767,6 +797,11 @@ body .footer-details .details .footer-copyright .terms-privacy a {
     right: 0;
     bottom: -30px;
   }
+  .discover .discover-page-three {
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+  }
   .discover .discover-page-three .video-discover-title {
     text-align: center;
   }
@@ -776,11 +811,32 @@ body .footer-details .details .footer-copyright .terms-privacy a {
     color: #d4d2d2;
   }
   .discover .discover-page-three .discover-video {
+    position: relative;
     margin-top: 70px;
     text-align: center;
   }
-  .discover .discover-page-three .discover-video .video video {
+  .discover .discover-page-three .discover-video video {
     width: 280px;
+  }
+  .discover .discover-page-three .discover-video .play-button {
+    position: absolute;
+    bottom: -1rem;
+    right: -1rem;
+    background: #06617d;
+    width: 60px;
+    height: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .discover .discover-page-three .discover-video .play-button .play-btn {
+    font-size: 1rem;
   }
   .places .container-image-places {
     gap: 20px 0;
@@ -982,25 +1038,7 @@ body .footer-details .details .footer-copyright .terms-privacy a {
   }
   .home .home-title .btn-explore {
     margin-top: 20px;
-  }
-  .home .home-title .btn-explore {
-    position: relative;
-    background: #003f52;
     padding: 13px 37px;
-    border: none;
-    overflow: hidden;
-    -webkit-transition: 0.4s ease;
-    transition: 0.4s ease;
-    opacity: 0;
-  }
-  .home .home-title .btn-explore .link-explore {
-    color: white;
-    font-weight: 500;
-    text-decoration: none;
-  }
-  .home .home-title .btn-explore:hover, .home .home-title .btn-explore:focus {
-    -webkit-box-shadow: inset 0 4em 0 #06617d;
-            box-shadow: inset 0 4em 0 #06617d;
   }
   .home .five-maldives-beaches {
     display: -webkit-box;
@@ -1184,9 +1222,12 @@ body .footer-details .details .footer-copyright .terms-privacy a {
         -ms-flex-pack: justify;
             justify-content: space-between;
     border: 1px solid white;
+    -webkit-transform: translateY(70px);
+            transform: translateY(70px);
   }
   .discover .discover-page-one .discover-image .container-image-discover .dhigurah-beach {
     position: relative;
+    overflow: hidden;
     width: 300px;
     height: 300px;
   }
@@ -1203,6 +1244,7 @@ body .footer-details .details .footer-copyright .terms-privacy a {
   }
   .discover .discover-page-one .discover-image .container-image-discover .Bikini-beach {
     position: relative;
+    overflow: hidden;
     width: 300px;
     height: 300px;
   }
@@ -1219,6 +1261,7 @@ body .footer-details .details .footer-copyright .terms-privacy a {
   }
   .discover .discover-page-one .discover-image .container-image-discover .Milaidhoo-beach {
     position: relative;
+    overflow: hidden;
     width: 300px;
     height: 300px;
   }
@@ -1299,20 +1342,47 @@ body .footer-details .details .footer-copyright .terms-privacy a {
             transform: translate(-50px, 70px);
   }
   .discover .discover-page-three {
-    height: 100vh;
+    height: 90vh;
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
   }
   .discover .discover-page-three .video-discover-title {
     text-align: center;
   }
   .discover .discover-page-three .video-discover-title h2 {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   .discover .discover-page-three .video-discover-title p {
     color: #d4d2d2;
   }
   .discover .discover-page-three .discover-video {
-    margin-top: 80px;
     text-align: center;
+    position: relative;
+  }
+  .discover .discover-page-three .discover-video video {
+    width: 500px;
+  }
+  .discover .discover-page-three .discover-video .play-button {
+    background-color: #06617d;
+    width: 60px;
+    height: 40px;
+    position: absolute;
+    right: 1rem;
+    bottom: -1rem;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .discover .discover-page-three .discover-video .play-button .play-icon {
+    font-size: 1rem;
   }
   .places {
     height: 100vh;
@@ -1329,11 +1399,11 @@ body .footer-details .details .footer-copyright .terms-privacy a {
             transform: translateY(-50px);
   }
   .places .container-image-places {
+    width: 60%;
     display: -ms-grid;
     display: grid;
-    width: 60%;
-    -ms-grid-columns: 200px 200px 200px;
-        grid-template-columns: 200px 200px 200px;
+    -ms-grid-columns: auto-fit(minmax(100px, 200px));
+        grid-template-columns: auto-fit(minmax(100px, 200px));
     gap: 20px;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -1642,7 +1712,7 @@ body .footer-details .details .footer-copyright .terms-privacy a {
     padding: 1.7rem 4rem;
     margin-top: 50px;
   }
-  .home .home-title .btn-explore a {
+  .home .home-title .btn-explore .link-explore {
     font-size: 1.5rem;
   }
   .home .five-maldives-beaches {
@@ -1928,6 +1998,504 @@ body .footer-details .details .footer-copyright .terms-privacy a {
   }
   .discover .discover-page-three .discover-video {
     margin-top: 100px;
+    position: relative;
+  }
+  .discover .discover-page-three .discover-video video {
+    width: 600px;
+  }
+  .discover .discover-page-three .discover-video .play-button {
+    position: absolute;
+    bottom: -1rem;
+    right: 1rem;
+    background: #06617d;
+    width: 100px;
+    height: 70px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .discover .discover-page-three .discover-video .play-button .play-btn {
+    font-size: 1.5rem;
+  }
+  .places .places-title h2 {
+    font-size: 2rem;
+  }
+  .places .container-image-places {
+    -ms-grid-columns: (max-content)[2];
+        grid-template-columns: repeat(2, -webkit-max-content);
+        grid-template-columns: repeat(2, max-content);
+    gap: 20px 20px;
+  }
+  .mail .container-mail {
+    width: 100%;
+    padding: 2rem;
+  }
+  .mail .container-mail .mail-title h2 {
+    font-size: 2rem;
+  }
+  .mail .container-mail .input-mail {
+    margin-top: 50px;
+  }
+  .mail .container-mail .input-mail .type-email {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: #003f52;
+    color: white;
+    border: none;
+    outline: none;
+  }
+  .mail .container-mail .input-mail .btn-subs {
+    width: 100px;
+    padding: 12px 10px;
+    background: #003f52;
+    border: none;
+    margin-top: 30px;
+  }
+  .mail .container-mail .input-mail .btn-subs .link-subs {
+    color: white;
+    text-decoration: none;
+  }
+  .footer-details {
+    height: 40vh;
+    padding: 0 2rem;
+    position: relative;
+  }
+  .footer-details .social-media .socmed {
+    font-size: 1.7rem;
+  }
+  .footer-details .details {
+    height: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .footer-details .details .details-detail .about-details h4,
+  .footer-details .details .details-detail .company-details h4,
+  .footer-details .details .details-detail .support-details h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+  .footer-details .details .details-detail .about-details a,
+  .footer-details .details .details-detail .company-details a,
+  .footer-details .details .details-detail .support-details a {
+    font-size: 0.9rem;
+  }
+  .footer-details .details .footer-copyright {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .footer-details .details .footer-copyright p {
+    font-size: 12px;
+    color: #d4d2d2;
+  }
+  .footer-details .details .footer-copyright .terms-privacy {
+    width: 200px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .footer-details .details .footer-copyright .terms-privacy a {
+    text-decoration: none;
+    color: #d4d2d2;
+    font-size: 9px;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 767px) {
+  .header {
+    background: transparent;
+  }
+  .header .nav-container {
+    padding: 2rem 2rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .header .nav-container .nav-list {
+    width: 370px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .header .nav-container .nav-list .nav-item {
+    list-style: none;
+  }
+  .header .nav-container .nav-list .nav-item::after {
+    content: "";
+    width: 20%;
+    height: 1.6px;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    z-index: -1;
+    background: white;
+    -webkit-transition: 0.4s ease;
+    transition: 0.4s ease;
+  }
+  .header .nav-container .nav-list .nav-item:hover::after {
+    width: 100%;
+  }
+  .header .nav-container .nav-list .nav-item .item {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+  .header .nav-container .nav-close,
+  .header .nav-container .toggle {
+    display: none;
+  }
+  .header .nav-container .logo-link {
+    font-size: 2rem;
+  }
+  .home {
+    background-size: cover;
+    padding: 0 2rem;
+  }
+  .home .home-title {
+    -webkit-transform: translateY(200px);
+            transform: translateY(200px);
+  }
+  .home .home-title h1 {
+    font-size: 4rem;
+  }
+  .home .home-title .btn-explore {
+    padding: 1.7rem 4rem;
+    margin-top: 50px;
+  }
+  .home .home-title .btn-explore .link-explore {
+    font-size: 1.5rem;
+  }
+  .home .five-maldives-beaches {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    margin-top: 100px;
+  }
+  .home .five-maldives-beaches .beach-in-maldives {
+    width: 400px;
+    padding: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    background-color: #003f52;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+    z-index: 2;
+  }
+  .home .five-maldives-beaches .beach-in-maldives .visit-beaches {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .home .five-maldives-beaches .beach-in-maldives .visit-beaches p {
+    color: white;
+    font-size: 1.2rem;
+  }
+  .home .five-maldives-beaches .beach-in-maldives .visit-beaches .more {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .home .five-maldives-beaches .beach-in-maldives .visit-beaches .more a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+  }
+  .home .five-maldives-beaches .beach-in-maldives .visit-beaches .more .arrow-right {
+    color: white;
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+    font-size: 1.2rem;
+  }
+  .home .five-maldives-beaches .beach-in-maldives .img-more-beaches {
+    height: 200px;
+    overflow: hidden;
+  }
+  .home .five-maldives-beaches .beach-in-maldives .img-more-beaches .img-visit-beaches {
+    cursor: pointer;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
+    height: 100%;
+  }
+  .home .five-maldives-beaches .beach-in-maldives .img-more-beaches .img-visit-beaches:hover {
+    -webkit-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1);
+  }
+  .home .social-media {
+    width: 240px;
+    -webkit-transform: translateY(200px);
+            transform: translateY(200px);
+  }
+  .home .social-media .socmed {
+    font-size: 2.4rem;
+  }
+  .about {
+    padding: 2rem 20px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .about .about-title {
+    text-align: center;
+    width: 500px;
+    margin-top: 30px;
+  }
+  .about .about-title h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+  }
+  .about .about-title p {
+    color: #d4d2d2;
+    font-size: 1rem;
+  }
+  .about .about-title .btn-about {
+    position: relative;
+    background: #06617d;
+    padding: 1.4rem 3rem;
+    border: none;
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+  .about .about-title .btn-about .link-about {
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  .about .about-image {
+    width: 70%;
+    height: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .about .about-image .about-img1 {
+    width: 230px;
+  }
+  .about .about-image .about-img2 {
+    width: 270px;
+  }
+  .discover {
+    padding: 0 2rem;
+  }
+  .discover .discover-page-one {
+    height: 70vh;
+  }
+  .discover .discover-page-one .discover-title {
+    text-align: center;
+  }
+  .discover .discover-page-one .discover-title h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+  }
+  .discover .discover-page-one .discover-title p {
+    font-size: 1rem;
+  }
+  .discover .discover-page-one .discover-image {
+    margin-top: 60px;
+  }
+  .discover .discover-page-one .discover-image .container-image-discover {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .discover .discover-page-one .discover-image .container-image-discover .dhigurah-beach {
+    position: relative;
+  }
+  .discover .discover-page-one .discover-image .container-image-discover .dhigurah-beach img {
+    width: 190px;
+  }
+  .discover .discover-page-one .discover-image .container-image-discover .dhigurah-beach .dhigurah-beach-explain {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+  }
+  .discover .discover-page-one .discover-image .container-image-discover .dhigurah-beach .dhigurah-beach-explain h2 {
+    font-size: 1rem;
+  }
+  .discover .discover-page-one .discover-image .container-image-discover .dhigurah-beach .dhigurah-beach-explain p {
+    font-size: 14px;
+  }
+  .discover .discover-page-one .discover-image .container-image-discover .Bikini-beach {
+    position: relative;
+  }
+  .discover .discover-page-one .discover-image .container-image-discover .Bikini-beach img {
+    width: 210px;
+  }
+  .discover .discover-page-one .discover-image .container-image-discover .Bikini-beach .Bikini-beach-explain {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+  }
+  .discover .discover-page-one .discover-image .container-image-discover .Bikini-beach .Bikini-beach-explain h2 {
+    font-size: 1.1rem;
+  }
+  .discover .discover-page-one .discover-image .container-image-discover .Bikini-beach .Bikini-beach-explain p {
+    font-size: 0.9rem;
+  }
+  .discover .discover-page-one .discover-image .container-image-discover .Milaidhoo-beach {
+    position: relative;
+  }
+  .discover .discover-page-one .discover-image .container-image-discover .Milaidhoo-beach img {
+    width: 190px;
+  }
+  .discover .discover-page-one .discover-image .container-image-discover .Milaidhoo-beach .Milaidhoo-beach-explain {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+  }
+  .discover .discover-page-one .discover-image .container-image-discover .Milaidhoo-beach .Milaidhoo-beach-explain h2 {
+    font-size: 1rem;
+  }
+  .discover .discover-page-one .discover-image .container-image-discover .Milaidhoo-beach .Milaidhoo-beach-explain p {
+    font-size: 14px;
+  }
+  .discover .discover-page-two {
+    height: 70vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .discover .discover-page-two .serve-title {
+    text-align: center;
+  }
+  .discover .discover-page-two .serve-title h2 {
+    font-size: 2rem;
+  }
+  .discover .discover-page-two .serve-title .serving {
+    margin-top: 30px;
+    width: 380px;
+    text-align: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .discover .discover-page-two .serve-title .serving h4 {
+    margin-bottom: 10px;
+  }
+  .discover .discover-page-two .serve-image {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    left: -20px;
+    margin-top: 100px;
+  }
+  .discover .discover-page-two .serve-image .serve1 {
+    width: 400px;
+  }
+  .discover .discover-page-two .serve-image .serve2 {
+    width: 150px;
+    position: absolute;
+    bottom: -40px;
+    right: -50px;
+  }
+  .discover .discover-page-three {
+    height: 70vh;
+    text-align: center;
+  }
+  .discover .discover-page-three .video-discover-title h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  .discover .discover-page-three .video-discover-title p {
+    font-size: 1rem;
+  }
+  .discover .discover-page-three .discover-video {
+    margin-top: 100px;
+    position: relative;
+  }
+  .discover .discover-page-three .discover-video video {
+    width: 600px;
+  }
+  .discover .discover-page-three .discover-video .play-button {
+    position: absolute;
+    bottom: -1rem;
+    right: 1rem;
+    background: #06617d;
+    width: 100px;
+    height: 70px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .discover .discover-page-three .discover-video .play-button .play-btn {
+    font-size: 1.5rem;
   }
   .places .places-title h2 {
     font-size: 2rem;

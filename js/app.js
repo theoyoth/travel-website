@@ -12,13 +12,13 @@ if (toggle) {
   toggle.addEventListener("click", () => {
     navMenu.classList.add("active");
   });
+  // remove nav-menu when click nav-item is clicked
   navItem.forEach((item) => {
     item.addEventListener("click", () => {
       navMenu.classList.remove("active");
     });
   });
 }
-// remove nav-menu when click nav-item is clicked
 
 // toggle close button
 const btnClose = document.getElementById("nav-close");
@@ -42,8 +42,8 @@ window.addEventListener("scroll", scrollHeader);
 // ====ANIMATION GSAP
 let tl = gsap.timeline();
 // ================ header ================ //
-tl.to(".logo-link", { y: 0, duration: 0.5 });
-tl.to(".nav-item", { y: 0, duration: 1, stagger: 0.2 });
+tl.to(".logo-link", { y: 0, duration: 0.5, opacity: 1 });
+tl.to(".nav-item", { y: 0, opacity: 1, duration: 1, stagger: 0.2 });
 
 // scroll header . to change background color of header
 // gsap.to(".header", {
@@ -88,18 +88,7 @@ gsap.to(".about-img", {
 });
 
 // ================ discover page ================ //
-
-// gsap.to(".container-image-discover", {
-//   y: 0,
-//   opacity: 1,
-//   scrollTrigger: {
-//     trigger: ".discover",
-//     start: "top 40%",
-//     end: "top 2 0%",
-//     toggleActions: "play resume resume reset",
-//   },
-// });
-gsap.to(" .discover-title", {
+gsap.to(".discover-title", {
   y: 0,
   opacity: 1,
   scrollTrigger: {
@@ -111,37 +100,91 @@ gsap.to(" .discover-title", {
 });
 
 // ================ Discover swiper =============== //
-if (window.innerWidth >= 1025) {
-  var swiper = new Swiper(".discover-image", {
-    effect: "coverflow",
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: "auto",
-    spaceBetween: 40,
-    coverflowEffect: {
-      rotate: 0,
-      stretch: 0,
-      depth: 100,
-      modifier: 1,
-      slideShadows: false,
-    },
-  });
-  // console.log("1025 px");
+// let windowWidth = window.innerWidth;
+// console.log(windowWidth);
+// if (windowWidth <= 500) {
+// }
+const swiper = new Swiper(".discover-image", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  spaceBetween: 40,
+  slidesPerView: "auto",
+  loop: true,
+  coverflowEffect: {
+    rotate: 0,
+  },
+});
+
+// ================ Discover experience =============== //
+
+gsap.to(".serve-title h2", {
+  y: 0,
+  opacity: 1,
+
+  scrollTrigger: {
+    trigger: ".discover-page-two",
+    start: "top 60%",
+    end: "bottom 10%",
+    toggleActions: "play reserve resume reverse",
+  },
+});
+gsap.to(".experience-company", {
+  y: 0,
+  opacity: 1,
+  stagger: 0.2,
+  scrollTrigger: {
+    trigger: ".discover-page-two",
+    start: "top 60%",
+    end: "bottom 10%",
+    toggleActions: "play reverse resume reverse",
+  },
+});
+
+// ================ Discover video =============== //
+gsap.to(".video-discover-title", {
+  y: 0,
+  opacity: 1,
+  scrollTrigger: {
+    trigger: ".discover-page-three",
+    start: "top 60%",
+    end: "bottom 20%",
+    toggleActions: "play reserve resume reverse",
+  },
+});
+
+const videoFile = document.getElementById("video-file"),
+  playBtn = document.getElementById("play-button"),
+  playIcon = document.getElementById("play-icon");
+
+function playPause() {
+  if (videoFile.paused) {
+    // play video
+    videoFile.play();
+
+    // change the icon
+    playIcon.classList.add("ri-pause-line");
+    playIcon.classList.remove("ri-play-fill");
+  } else {
+    // pause video
+    videoFile.pause();
+
+    // change the icon
+    playIcon.classList.add("ri-play-fill");
+    playIcon.classList.remove("ri-pause-line");
+  }
 }
-if (window.innerWidth <= 500) {
-  var swiper = new Swiper(".discover-image", {
-    effect: "coverflow",
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: "auto",
-    spaceBetween: 40,
-    loop: true,
-    coverflowEffect: {
-      rotate: 0,
-      stretch: 0,
-      depth: 100,
-      modifier: 1,
-      slideShadows: false,
-    },
-  });
-}
+playBtn.addEventListener("click", playPause);
+
+// ===================== Places ====================== //
+gsap.to(".beach-maldives", {
+  y: 0,
+  opacity: 1,
+  stagger: 0.2,
+  scrollTrigger: {
+    trigger: ".places",
+    start: "top 60%",
+    end: "bottom 10%",
+    toggleActions: "play resume none none",
+  },
+});

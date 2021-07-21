@@ -28,6 +28,7 @@ body {
       .nav-item {
         position: relative;
         transform: translateY(-20px);
+        opacity: 0;
       }
 
       .logo-link,
@@ -39,6 +40,7 @@ body {
       }
       .logo-link {
         transform: translateY(-10px);
+        opacity: 0;
       }
     }
   }
@@ -53,41 +55,40 @@ body {
     background-image: url("../img/bg.jpg");
     background-repeat: no-repeat;
     z-index: 1;
+    .home-title {
+      .title {
+        transform: translateX(-100px);
+        opacity: 0;
+        z-index: 5;
+        p {
+          color: white;
+          margin-bottom: 20px;
+          font-weight: 500;
+        }
+        h1 {
+          color: white;
+          font-weight: 500;
 
-    .title {
-      transform: translateX(-100px);
-      opacity: 0;
-      z-index: 5;
-      p {
-        color: white;
-        margin-bottom: 20px;
-        font-weight: 500;
-      }
-      h1 {
-        color: white;
-        font-weight: 500;
-
-        span {
-          font-weight: 700;
+          span {
+            font-weight: 700;
+          }
         }
       }
-    }
-    .btn-explore {
-      position: relative;
-      background: $main-color;
-      padding: 13px 37px;
-      border: none;
-      overflow: hidden;
-      transition: 0.4s ease;
-      opacity: 0;
-      .link-explore {
-        color: white;
-        font-weight: 500;
-        text-decoration: none;
-      }
-      &:hover,
-      &:focus {
-        box-shadow: inset 0 4em 0 $snd-color;
+      .btn-explore {
+        position: relative;
+        background: $main-color;
+        border: none;
+        overflow: hidden;
+        transition: 0.4s ease;
+        opacity: 0;
+        .link-explore {
+          color: white;
+          font-weight: 500;
+          text-decoration: none;
+        }
+        &:hover {
+          box-shadow: inset 0 4em 0 $snd-color;
+        }
       }
     }
 
@@ -170,6 +171,26 @@ body {
       // transform: translateY(-50px);
       // opacity: 0;
     }
+    .discover-page-two {
+      .serve-title {
+        h2 {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+        .serving {
+          .experience-company {
+            transform: translateY(-30px);
+            opacity: 0;
+          }
+        }
+      }
+    }
+    .discover-page-three {
+      .video-discover-title {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+    }
   }
   // PLACES
   .places {
@@ -184,7 +205,6 @@ body {
     }
     .container-image-places {
       display: grid;
-      grid-template-columns: auto-fit(minmax(100px, 200px));
       justify-content: center;
 
       .beach-maldives {
@@ -249,6 +269,10 @@ body {
             }
           }
         }
+      }
+      .beach-maldives {
+        transform: translateY(-40px);
+        opacity: 0;
       }
     }
   }
@@ -425,8 +449,11 @@ body {
         }
       }
       .btn-explore {
-        font-size: 20px;
         margin-top: 60px;
+        padding: 13px 37px;
+        .link-explore {
+          font-size: 20px;
+        }
       }
     }
     .five-maldives-beaches {
@@ -585,6 +612,10 @@ body {
           }
         }
       }
+      .swiper-slide-shadow-left,
+      .swiper-slide-shadow-right {
+        background: none;
+      }
     }
     .discover-page-two {
       height: 70vh;
@@ -624,6 +655,8 @@ body {
       }
     }
     .discover-page-three {
+      display: grid;
+      place-items: center;
       .video-discover-title {
         text-align: center;
 
@@ -634,11 +667,25 @@ body {
         }
       }
       .discover-video {
+        position: relative;
         margin-top: 70px;
         text-align: center;
-        .video {
-          video {
-            width: 280px;
+
+        video {
+          width: 280px;
+        }
+        .play-button {
+          position: absolute;
+          bottom: -1rem;
+          right: -1rem;
+          background: $snd-color;
+          width: 60px;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .play-btn {
+            font-size: 1rem;
           }
         }
       }
@@ -814,23 +861,8 @@ body {
       }
       .btn-explore {
         margin-top: 20px;
-      }
-      .btn-explore {
-        position: relative;
-        background: $main-color;
         padding: 13px 37px;
-        border: none;
-        overflow: hidden;
-        transition: 0.4s ease;
-        opacity: 0;
         .link-explore {
-          color: white;
-          font-weight: 500;
-          text-decoration: none;
-        }
-        &:hover,
-        &:focus {
-          box-shadow: inset 0 4em 0 $snd-color;
         }
       }
     }
@@ -982,12 +1014,13 @@ body {
       .discover-image {
         display: flex;
         justify-content: space-between;
-        border: 1px solid white;
         // width: 800px;
+        border: 1px solid white;
+        transform: translateY(70px);
         .container-image-discover {
           .dhigurah-beach {
             position: relative;
-            // overflow: hidden;
+            overflow: hidden;
             width: 300px;
             height: 300px;
             img {
@@ -1005,7 +1038,7 @@ body {
           }
           .Bikini-beach {
             position: relative;
-            // overflow: hidden;
+            overflow: hidden;
             width: 300px;
             height: 300px;
             img {
@@ -1023,7 +1056,7 @@ body {
           }
           .Milaidhoo-beach {
             position: relative;
-            // overflow: hidden;
+            overflow: hidden;
             width: 300px;
             height: 300px;
             img {
@@ -1094,21 +1127,40 @@ body {
       }
     }
     .discover-page-three {
-      height: 100vh;
+      height: 90vh;
+      display: grid;
+      place-items: center;
 
       .video-discover-title {
         text-align: center;
         h2 {
-          margin-bottom: 30px;
+          margin-bottom: 20px;
         }
         p {
           color: $font-clr-snd;
         }
       }
       .discover-video {
-        margin-top: 80px;
         text-align: center;
-        .video {
+        position: relative;
+        video {
+          width: 500px;
+        }
+        .play-button {
+          background-color: $snd-color;
+          width: 60px;
+          height: 40px;
+          position: absolute;
+          right: 1rem;
+          bottom: -1rem;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .play-icon {
+            font-size: 1rem;
+          }
         }
       }
     }
@@ -1127,9 +1179,9 @@ body {
       transform: translateY(-50px);
     }
     .container-image-places {
-      display: grid;
       width: 60%;
-      grid-template-columns: 200px 200px 200px;
+      display: grid;
+      grid-template-columns: auto-fit(minmax(100px, 200px));
       gap: 20px;
       justify-content: center;
 
@@ -1391,7 +1443,7 @@ body {
       .btn-explore {
         padding: 1.7rem 4rem;
         margin-top: 50px;
-        a {
+        .link-explore {
           font-size: 1.5rem;
         }
       }
@@ -1637,6 +1689,450 @@ body {
       }
       .discover-video {
         margin-top: 100px;
+        position: relative;
+        video {
+          width: 600px;
+        }
+        .play-button {
+          position: absolute;
+          bottom: -1rem;
+          right: 1rem;
+          background: $snd-color;
+          width: 100px;
+          height: 70px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .play-btn {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+  // places TABLET
+  .places {
+    .places-title {
+      h2 {
+        font-size: 2rem;
+      }
+    }
+    .container-image-places {
+      grid-template-columns: repeat(2, max-content);
+      gap: 20px 20px;
+    }
+  }
+  // mail TABLET
+  .mail {
+    .container-mail {
+      width: 100%;
+      padding: 2rem;
+      .mail-title {
+        h2 {
+          font-size: 2rem;
+        }
+      }
+      .input-mail {
+        margin-top: 50px;
+        .type-email {
+          width: 100%;
+          padding: 1rem 2rem;
+          background: $main-color;
+          color: white;
+          border: none;
+          outline: none;
+        }
+        .btn-subs {
+          width: 100px;
+          padding: 12px 10px;
+          background: $main-color;
+          border: none;
+          margin-top: 30px;
+          .link-subs {
+            color: white;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+  // footer TABLET
+  .footer-details {
+    height: 40vh;
+    padding: 0 2rem;
+    position: relative;
+    .social-media {
+      .socmed {
+        font-size: 1.7rem;
+      }
+    }
+    .details {
+      height: 90%;
+      display: flex;
+      justify-content: space-between;
+      .details-detail {
+        .about-details,
+        .company-details,
+        .support-details {
+          h4 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+          }
+          a {
+            font-size: 0.9rem;
+          }
+        }
+      }
+      .footer-copyright {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        p {
+          font-size: 12px;
+          color: $font-clr-snd;
+        }
+        .terms-privacy {
+          width: 200px;
+          display: flex;
+          justify-content: space-between;
+          a {
+            text-decoration: none;
+            color: $font-clr-snd;
+            font-size: 9px;
+          }
+        }
+      }
+    }
+  }
+}
+// PHABLET
+@media (min-width: 501px) and (max-width: 767px) {
+  // header TABLET
+  .header {
+    background: transparent;
+
+    .nav-container {
+      padding: 2rem 2rem;
+      align-items: center;
+
+      .nav-list {
+        width: 370px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .nav-item {
+          list-style: none;
+
+          &::after {
+            content: "";
+            width: 20%;
+            height: 1.6px;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            z-index: -1;
+            background: white;
+            transition: 0.4s ease;
+          }
+          &:hover::after {
+            width: 100%;
+          }
+          .item {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            font-size: 1.1rem;
+          }
+        }
+      }
+
+      .nav-close,
+      .toggle {
+        display: none;
+      }
+      .logo-link {
+        font-size: 2rem;
+      }
+    }
+  }
+  // home TABLET
+  .home {
+    background-size: cover;
+    padding: 0 2rem;
+    .home-title {
+      transform: translateY(200px);
+
+      h1 {
+        font-size: 4rem;
+      }
+      .btn-explore {
+        padding: 1.7rem 4rem;
+        margin-top: 50px;
+        .link-explore {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .five-maldives-beaches {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 100px;
+      .beach-in-maldives {
+        width: 400px;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        background-color: $main-color;
+        transform: translateY(100px);
+        z-index: 2;
+
+        .visit-beaches {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          p {
+            color: white;
+            font-size: 1.2rem;
+          }
+          .more {
+            display: flex;
+            align-items: center;
+
+            a {
+              text-decoration: none;
+              color: white;
+              font-size: 1.2rem;
+            }
+            .arrow-right {
+              color: white;
+              transform: translateX(10px);
+              font-size: 1.2rem;
+            }
+          }
+        }
+        .img-more-beaches {
+          height: 200px;
+          overflow: hidden;
+          .img-visit-beaches {
+            cursor: pointer;
+            transition: all 0.6s;
+            height: 100%;
+
+            &:hover {
+              transform: scale(1.1, 1.1);
+            }
+          }
+        }
+      }
+    }
+    .social-media {
+      width: 240px;
+      transform: translateY(200px);
+      .socmed {
+        font-size: 2.4rem;
+      }
+    }
+  }
+  // about TABLET
+  .about {
+    padding: 2rem 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .about-title {
+      text-align: center;
+      width: 500px;
+      margin-top: 30px;
+      h2 {
+        margin-bottom: 30px;
+        font-size: 2rem;
+      }
+      p {
+        color: $font-clr-snd;
+        font-size: 1rem;
+      }
+
+      .btn-about {
+        position: relative;
+        background: $snd-color;
+        padding: 1.4rem 3rem;
+        border: none;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        .link-about {
+          color: white;
+          font-weight: 500;
+          text-decoration: none;
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .about-image {
+      width: 70%;
+      height: 50%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .about-img1 {
+        width: 230px;
+      }
+      .about-img2 {
+        width: 270px;
+      }
+    }
+  }
+  // discover TABLET
+  .discover {
+    padding: 0 2rem;
+    .discover-page-one {
+      height: 70vh;
+      .discover-title {
+        text-align: center;
+        h2 {
+          margin-bottom: 30px;
+          font-size: 2rem;
+        }
+        p {
+          font-size: 1rem;
+        }
+      }
+      .discover-image {
+        margin-top: 60px;
+        .container-image-discover {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .dhigurah-beach {
+            position: relative;
+            img {
+              width: 190px;
+            }
+            .dhigurah-beach-explain {
+              position: absolute;
+              bottom: 10px;
+              left: 10px;
+              h2 {
+                font-size: 1rem;
+              }
+              p {
+                font-size: 14px;
+              }
+            }
+          }
+          .Bikini-beach {
+            position: relative;
+            img {
+              width: 210px;
+            }
+            .Bikini-beach-explain {
+              position: absolute;
+              bottom: 10px;
+              left: 10px;
+              h2 {
+                font-size: 1.1rem;
+              }
+              p {
+                font-size: 0.9rem;
+              }
+            }
+          }
+          .Milaidhoo-beach {
+            position: relative;
+            img {
+              width: 190px;
+            }
+            .Milaidhoo-beach-explain {
+              position: absolute;
+              bottom: 10px;
+              left: 10px;
+              h2 {
+                font-size: 1rem;
+              }
+              p {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .discover-page-two {
+      height: 70vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .serve-title {
+        text-align: center;
+        h2 {
+          font-size: 2rem;
+        }
+        .serving {
+          margin-top: 30px;
+          width: 380px;
+          text-align: left;
+          display: flex;
+          justify-content: space-between;
+
+          h4 {
+            margin-bottom: 10px;
+          }
+        }
+      }
+      .serve-image {
+        display: flex;
+        position: relative;
+        left: -20px;
+        margin-top: 100px;
+        .serve1 {
+          width: 400px;
+        }
+
+        .serve2 {
+          width: 150px;
+          position: absolute;
+          bottom: -40px;
+          right: -50px;
+        }
+      }
+    }
+    .discover-page-three {
+      height: 70vh;
+      text-align: center;
+
+      .video-discover-title {
+        h2 {
+          font-size: 2rem;
+          margin-bottom: 30px;
+        }
+        p {
+          font-size: 1rem;
+        }
+      }
+      .discover-video {
+        margin-top: 100px;
+        position: relative;
+        video {
+          width: 600px;
+        }
+        .play-button {
+          position: absolute;
+          bottom: -1rem;
+          right: 1rem;
+          background: $snd-color;
+          width: 100px;
+          height: 70px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .play-btn {
+            font-size: 1.5rem;
+          }
+        }
       }
     }
   }
@@ -1733,7 +2229,4 @@ body {
       }
     }
   }
-}
-// PHABLET
-@media (min-width: 501px) and (max-width: 767px) {
 }
