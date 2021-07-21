@@ -654,6 +654,9 @@ body .footer-details .details .footer-copyright .terms-privacy a {
   .home .social-media .link-socmed .socmed {
     font-size: 1.4rem;
   }
+  .home .scroll-effect {
+    display: none;
+  }
   .about {
     padding: 2rem 20px;
     display: -ms-grid;
@@ -1126,6 +1129,115 @@ body .footer-details .details .footer-copyright .terms-privacy a {
     color: white;
     font-size: 1.5rem;
   }
+  .home .scroll-effect {
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 1.5rem;
+    border: 2px solid white;
+    bottom: 3rem;
+    left: 50%;
+    pointer-events: none;
+    opacity: 0;
+  }
+  .home .scroll-effect::before {
+    content: "";
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    bottom: 1rem;
+    left: -6px;
+    border-radius: 50%;
+    margin: 0.5rem;
+    background: white;
+    opacity: 0;
+  }
+  .home:hover .scroll-effect {
+    -webkit-animation: move-scroll 1s ease infinite;
+            animation: move-scroll 1s ease infinite;
+  }
+  .home:hover .scroll-effect::before {
+    -webkit-animation: move-circle 1s ease infinite;
+            animation: move-circle 1s ease infinite;
+  }
+  @-webkit-keyframes move-scroll {
+    0% {
+      height: 2rem;
+    }
+    20% {
+      opacity: 1;
+    }
+    50% {
+      height: 5rem;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: translateY(2.5rem);
+              transform: translateY(2.5rem);
+      height: 2rem;
+    }
+  }
+  @keyframes move-scroll {
+    0% {
+      height: 2rem;
+    }
+    20% {
+      opacity: 1;
+    }
+    50% {
+      height: 5rem;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: translateY(2.5rem);
+              transform: translateY(2.5rem);
+      height: 2rem;
+    }
+  }
+  @-webkit-keyframes move-circle {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    20% {
+      opacity: 1;
+    }
+    50% {
+      -webkit-transform: translateY(1.5rem);
+              transform: translateY(1.5rem);
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: translateY(20px);
+              transform: translateY(20px);
+    }
+  }
+  @keyframes move-circle {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    20% {
+      opacity: 1;
+    }
+    50% {
+      -webkit-transform: translateY(1.5rem);
+              transform: translateY(1.5rem);
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: translateY(20px);
+              transform: translateY(20px);
+    }
+  }
   .about {
     padding: 2rem 7rem;
     height: 100vh;
@@ -1385,7 +1497,6 @@ body .footer-details .details .footer-copyright .terms-privacy a {
     font-size: 1rem;
   }
   .places {
-    height: 100vh;
     background: #003f52;
     padding: 2rem 7rem;
     display: -ms-grid;
@@ -1402,8 +1513,9 @@ body .footer-details .details .footer-copyright .terms-privacy a {
     width: 60%;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: auto-fit(minmax(100px, 200px));
-        grid-template-columns: auto-fit(minmax(100px, 200px));
+    -ms-grid-columns: (max-content)[2];
+        grid-template-columns: repeat(2, -webkit-max-content);
+        grid-template-columns: repeat(2, max-content);
     gap: 20px;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -1793,6 +1905,9 @@ body .footer-details .details .footer-copyright .terms-privacy a {
   }
   .home .social-media .socmed {
     font-size: 2.4rem;
+  }
+  .home .scroll-effect {
+    display: none;
   }
   .about {
     padding: 2rem 20px;
@@ -2267,6 +2382,9 @@ body .footer-details .details .footer-copyright .terms-privacy a {
   }
   .home .social-media .socmed {
     font-size: 2.4rem;
+  }
+  .home .scroll-effect {
+    display: none;
   }
   .about {
     padding: 2rem 20px;

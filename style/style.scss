@@ -517,6 +517,9 @@ body {
         }
       }
     }
+    .scroll-effect {
+      display: none;
+    }
   }
   // ABOUT for MOBILE
   .about {
@@ -932,6 +935,71 @@ body {
         }
       }
     }
+    .scroll-effect {
+      position: absolute;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 1.5rem;
+      border: 2px solid white;
+      bottom: 3rem;
+      left: 50%;
+      pointer-events: none;
+      opacity: 0;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 1rem;
+        height: 1rem;
+        bottom: 1rem;
+        left: -6px;
+        border-radius: 50%;
+        margin: 0.5rem;
+        background: white;
+        opacity: 0;
+      }
+    }
+    &:hover .scroll-effect {
+      animation: move-scroll 1s ease infinite;
+    }
+    &:hover .scroll-effect::before {
+      animation: move-circle 1s ease infinite;
+    }
+    @keyframes move-scroll {
+      0% {
+        height: 2rem;
+      }
+      20% {
+        opacity: 1;
+      }
+      50% {
+        height: 5rem;
+      }
+      80% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(2.5rem);
+        height: 2rem;
+      }
+    }
+    @keyframes move-circle {
+      0% {
+        transform: translateY(0);
+      }
+      20% {
+        opacity: 1;
+      }
+      50% {
+        transform: translateY(1.5rem);
+      }
+      80% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(20px);
+      }
+    }
   }
   // ABOUT LAPTOP
   .about {
@@ -1167,7 +1235,6 @@ body {
   }
   // PLACES LAPTOP
   .places {
-    height: 100vh;
     background: $main-color;
     padding: 2rem 7rem;
     display: grid;
@@ -1181,7 +1248,7 @@ body {
     .container-image-places {
       width: 60%;
       display: grid;
-      grid-template-columns: auto-fit(minmax(100px, 200px));
+      grid-template-columns: repeat(2, max-content);
       gap: 20px;
       justify-content: center;
 
@@ -1507,6 +1574,9 @@ body {
       .socmed {
         font-size: 2.4rem;
       }
+    }
+    .scroll-effect {
+      display: none;
     }
   }
   // about TABLET
@@ -1933,6 +2003,9 @@ body {
       .socmed {
         font-size: 2.4rem;
       }
+    }
+    .scroll-effect {
+      display: none;
     }
   }
   // about TABLET
