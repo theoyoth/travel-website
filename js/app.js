@@ -100,10 +100,7 @@ gsap.to(".discover-title", {
 });
 
 // ================ Discover swiper =============== //
-// let windowWidth = window.innerWidth;
-// console.log(windowWidth);
-// if (windowWidth <= 500) {
-// }
+
 const swiper = new Swiper(".discover-image", {
   effect: "coverflow",
   grabCursor: true,
