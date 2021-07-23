@@ -271,7 +271,6 @@ body .places {
 body .places .places-title {
   color: white;
   text-align: center;
-  margin: 30px 0;
 }
 
 body .places .container-image-places {
@@ -751,6 +750,7 @@ body .footer-details .details .footer-copyright .terms-privacy a {
   }
   .discover .discover-page-one .discover-title {
     text-align: center;
+    margin-top: 40px;
   }
   .discover .discover-page-one .discover-title p {
     font-size: 12px;
@@ -874,6 +874,10 @@ body .footer-details .details .footer-copyright .terms-privacy a {
   }
   .discover .discover-page-three .discover-video .play-button .play-btn {
     font-size: 1rem;
+  }
+  .places .places-title {
+    margin-top: 60px;
+    margin-bottom: 40px;
   }
   .places .container-image-places {
     gap: 20px 0;
@@ -1890,7 +1894,7 @@ body .footer-details .details .footer-copyright .terms-privacy a {
   .about .about-title {
     text-align: center;
     width: 500px;
-    margin-top: 30px;
+    margin-top: 70px;
   }
   .about .about-title h2 {
     margin-bottom: 30px;
@@ -1937,10 +1941,11 @@ body .footer-details .details .footer-copyright .terms-privacy a {
     padding: 0 2rem;
   }
   .discover .discover-page-one {
-    height: 70vh;
+    height: 90vh;
   }
   .discover .discover-page-one .discover-title {
     text-align: center;
+    margin-top: 96px;
   }
   .discover .discover-page-one .discover-title h2 {
     margin-bottom: 30px;
@@ -2043,6 +2048,10 @@ body .footer-details .details .footer-copyright .terms-privacy a {
   }
   .discover .discover-page-three .discover-video .play-button .play-btn {
     font-size: 1.5rem;
+  }
+  .places .places-title {
+    margin-top: 100px;
+    margin-bottom: 40px;
   }
   .places .places-title h2 {
     font-size: 2rem;

@@ -228,7 +228,6 @@ body {
     .places-title {
       color: white;
       text-align: center;
-      margin: 30px 0;
     }
     .container-image-places {
       display: grid;
@@ -605,6 +604,7 @@ body {
 
       .discover-title {
         text-align: center;
+        margin-top: 40px;
         p {
           font-size: 12px;
           color: $font-clr-snd;
@@ -726,6 +726,10 @@ body {
   }
   // PLACES MOBILE
   .places {
+    .places-title {
+      margin-top: 60px;
+      margin-bottom: 40px;
+    }
     .container-image-places {
       gap: 20px 0;
       margin-bottom: 50px;
@@ -1550,7 +1554,7 @@ body {
     .about-title {
       text-align: center;
       width: 500px;
-      margin-top: 30px;
+      margin-top: 70px;
       h2 {
         margin-bottom: 30px;
         font-size: 2rem;
@@ -1594,9 +1598,10 @@ body {
   .discover {
     padding: 0 2rem;
     .discover-page-one {
-      height: 70vh;
+      height: 90vh;
       .discover-title {
         text-align: center;
+        margin-top: 96px;
         h2 {
           margin-bottom: 30px;
           font-size: 2rem;
@@ -1690,6 +1695,8 @@ body {
   // places TABLET
   .places {
     .places-title {
+      margin-top: 100px;
+      margin-bottom: 40px;
       h2 {
         font-size: 2rem;
       }
